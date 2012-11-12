@@ -1,0 +1,399 @@
+<html><head><title>KPAX</title></head><body><h3>API for package KPAX</h3>
+<blockquote>The KPAX Web Application Framework</blockquote>
+<p><b>*before-last-debug-request*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>The request part of the before last request-response handled by the server</blockquote>
+<blockquote>Initial value: <tt>NIL</tt></blockquote>
+<p><b>*before-last-request-response*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>The complete, original before last request-response handled by the server</blockquote>
+<blockquote>Initial value: <tt>NIL</tt></blockquote>
+<p><b>*default-data-set-render-options*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>The default options for rendering a data set view</blockquote>
+<blockquote>Initial value: <tt>#&lt;KPAX::OPTIONS 10CA4763&gt;</tt></blockquote>
+<p><b>*default-web-form-render-options*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>The default options for rendering a web form</blockquote>
+<blockquote>Initial value: <tt>#&lt;KPAX::OPTIONS 10DBB6C3&gt;</tt></blockquote>
+<p><b>*html-prologue*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>The contents of this string is inserted before any HTML page (used at macro-expansion/compile time)</blockquote>
+<blockquote>Initial value: <tt>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</tt></blockquote>
+<p><b>*last-debug-request*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>The request part of the last request-response handled by the server</blockquote>
+<blockquote>Initial value: <tt>NIL</tt></blockquote>
+<p><b>*last-request-response*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>The complete, original last request-response handled by the server</blockquote>
+<blockquote>Initial value: <tt>NIL</tt></blockquote>
+<p><b>*locale*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>Special variable to be bound to a locale specification object</blockquote>
+<blockquote>Initial value: <tt>NIL</tt></blockquote>
+<p><b>*localization-source*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>Special variable to be bound to an object to be used as localization source</blockquote>
+<blockquote>Initial value: <tt>NIL</tt></blockquote>
+<p><b>*pprint-html*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>Controls pretty printing of generated HTML (used at macro-expansion/compile time)</blockquote>
+<blockquote>Initial value: <tt>NIL</tt></blockquote>
+<p><b>*simple-localization-source*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>A builtin, simple localization source</blockquote>
+<blockquote>Initial value: <tt>#&lt;KPAX::SIMPLE-LOCALIZATION-SOURCE 10D7CA93&gt;</tt></blockquote>
+<p><b>*web-app-server*</b>&nbsp;&nbsp;&nbsp;<i>variable</i></p>
+<blockquote>A handle to the current web application server object</blockquote>
+<blockquote>Initial value: <tt>NIL</tt></blockquote>
+<p>(<b>add-appender</b> logger appender)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Add an appender to a logger</blockquote>
+<p>(<b>byte-vector->hex-string</b> bytes)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Convert a byte vector to a hex string, as in #(1 15 255) becomes '010FFF'</blockquote>
+<p>(<b>byte-vector->string</b> bytes)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Convert a byte vector to an 8-bit ASCII string</blockquote>
+<p>(<b>clear-attributes</b> object)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Clear all named attributes in object</blockquote>
+<p>(<b>commit-headers</b> request-response &optional content-length)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Partially commmit the request-response: response header line and response headers</blockquote>
+<p>(<b>copy-slots-form->object</b> form object slots)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Copy the named slots from a form to an object</blockquote>
+<p>(<b>copy-slots-object->form</b> object form slots)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Copy the named slots from an object to a form</blockquote>
+<p>(<b>data-set-elt</b> data-set position)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the element at position in data-set (zero-based offset)</blockquote>
+<p>(<b>data-set-length</b> data-set)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the number of elements in the data-set</blockquote>
+<p>(<b>debug-request</b> uri-string-or-request-response &key parameters session-id headers)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Execute a request (uri-string or debug-request-response instance) directly on KPAX</blockquote>
+<p><b>debug-stream-appender</b>&nbsp;&nbsp;&nbsp;<i>class</i></p>
+<blockquote>A stream appender for debugging including an 'enabled' property</blockquote>
+<blockquote>Class precedence list: <tt> debug-stream-appender stream-appender appender standard-object t</tt></blockquote>
+<blockquote>Class init args: <tt> :stream</tt></blockquote>
+<p>(<b>defwebapp</b> name &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Define a web application by name with the options listed</blockquote>
+<p>(<b>defwebform</b> name field-specs &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Define a web form with name, field-specs and options</blockquote>
+<p>(<b>destroy-kpax</b> &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Stop and remove the the KPAX web application server</blockquote>
+<p>(<b>dynamic-url</b> request-response relative-url &rest args)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Generate a dynamic URL in the context of request-response based on relative-url and args</blockquote>
+<p>(<b>ensure-web-form-definition</b> name field-specs options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Ensure (create or update) a web form with name, field-specs and options</blockquote>
+<p>(<b>extract-multipart-parts</b> stream-or-body-string &key use-tmp-files-for-data)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Extract all parts of a multipart/form-data encoded stream-or-body-string into ((part1-headers part1-data) ..)</blockquote>
+<p>(<b>field-value</b> web-form name)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the value of a field with name in web-form</blockquote>
+<p>(<b>find-menu-item</b> menu id)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Find the menu item with id in menu</blockquote>
+<p>(<b>find-multipart-header-attribute</b> attribute-name multipart-header)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Find the value of a named attribute in a multipart/form-data decoded header</blockquote>
+<p>(<b>find-multipart-header-named</b> header-name multipart-headers)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Find a named header in a list of multipart/form-data decoded headers</blockquote>
+<p>(<b>find-multipart-named</b> part-name parts)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Find a named part in a list of multipart/form-data decoded parts</blockquote>
+<p>(<b>find-session</b> session-manager id)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Find the session with id in session-manager</blockquote>
+<p>(<b>forward-request-response</b> dispatcher request-response &key webapp function)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Forward a request-repsonse to a different webapp and/or function but keeping the session</blockquote>
+<p>(<b>forward-to</b> request-response &key webapp function)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Convenience wrapper to forward a request-repsonse to a different webapp and/or function</blockquote>
+<p>(<b>generate-checkbox</b> request-response name value &key (true-value t) (checked-value checked) label)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Generate a checkbox type form input tag with optional extra label</blockquote>
+<p>(<b>generate-hidden-field</b> request-response name value)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Generate a hidden type form input tag</blockquote>
+<p>(<b>generate-password-field</b> request-response name value &key size maxlength readonly)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Generate a password type form input tag</blockquote>
+<p>(<b>generate-radiobutton</b> request-response name value &key (true-value t) (checked-value checked) label)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Generate a radio type form input tag with optional label</blockquote>
+<p>(<b>generate-select</b> request-response name values-list current-value &key (selected-value selected) multiple (multiple-value multiple) size labels (test (function eql)))&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Generate a select tag with nested option tags, indicating the current selection</blockquote>
+<p>(<b>generate-text-area</b> request-response name value &key cols rows readonly)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Generate a textarea form tag</blockquote>
+<p>(<b>generate-text-field</b> request-response name value &key size maxlength readonly)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Generate a text type form input tag</blockquote>
+<p>(<b>get-action</b> data-set-view)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the action to perform for item</blockquote>
+<p>(<b>get-actual-label</b> item &optional render-options)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the actual (translated using render-options) label to use for item</blockquote>
+<p>(<b>get-all-sessions</b> session-manager)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return a list of all known sessions</blockquote>
+<p>(<b>get-application</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the web application to which this request-response was directed</blockquote>
+<p>(<b>get-attribute</b> object key)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the attribute value for name in object</blockquote>
+<p>(setf (<b>get-attribute</b> attributes-mixin key) value)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Set the value of the attribute for key in object</blockquote>
+<p>(<b>get-attributes</b> object)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the list of all attribute keys known by object</blockquote>
+<p>(<b>get-content-stream</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Access the buffered stream to write content to for this request-response's reply</blockquote>
+<p>(<b>get-cookie</b> request-response name)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the most specific string value of the cookie with name in request-response</blockquote>
+<p>(<b>get-created-timestamp</b> session)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the universal time when this session was created</blockquote>
+<p>(<b>get-data-set</b> data-set-view)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Access the underlying data-set in data-set-view</blockquote>
+<p>(<b>get-debug-mode</b> object)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return whether object is in debug mode or not</blockquote>
+<p>(<b>get-debug-stream</b> web-app-server)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the debug stream of this web application server</blockquote>
+<p>(setf (<b>get-debug-stream</b> web-app-server) stream)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Set the debug stream of this web application server</blockquote>
+<p>(<b>get-dispatcher</b> server)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Access this server's dispatcher</blockquote>
+<p>(<b>get-dynamic-prefix</b> web-app)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get this server's dynamic prefix</blockquote>
+<p>(<b>get-home-url</b> web-app web-app-server)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the home URL for web-app in web-app-server</blockquote>
+<p>(<b>get-hostname</b> server)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get this server's hostname</blockquote>
+<p>(<b>get-id</b> web-form)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the id that uniquely identifies object</blockquote>
+<p>(<b>get-index</b> web-app)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the start function for this web application</blockquote>
+<p>(<b>get-items</b> object)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the items in object</blockquote>
+<p>(<b>get-last-modified-timestamp</b> session)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the universal time when this session was last modified ('touched')</blockquote>
+<p>(<b>get-logstream</b> web-app-server)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the log stream of this web application server</blockquote>
+<p>(setf (<b>get-logstream</b> web-app-server) stream)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Set the log stream of this web application server</blockquote>
+<p>(<b>get-menu-item-path</b> menu id)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Return the path list in menu to the menu item with id</blockquote>
+<p>(<b>get-name</b> web-form-group-definition)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the name of this object</blockquote>
+<p>(<b>get-option</b> object option-name)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Returns the value of a named option in object</blockquote>
+<p>(<b>get-request-body</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the request data, 'body', from request-response as a (possibly empty) string</blockquote>
+<p>(<b>get-request-header-value</b> request-response header-name)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the request header value for header-name in request-response</blockquote>
+<p>(<b>get-request-headers</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the list of all header names in request-response</blockquote>
+<p>(<b>get-request-ip-address</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the ip address of the client of request-response as a dotted string</blockquote>
+<p>(<b>get-request-method</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the request HTTP method, a keyword symbol most likely :get or :post (but extendible)</blockquote>
+<p>(<b>get-request-parameter-value</b> request-response parameter-name)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the first request parameter value for parameter-name in request-response</blockquote>
+<p>(<b>get-request-parameter-values</b> request-response parameter-name)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the list of request parameter values for parameter-name in request-response</blockquote>
+<p>(<b>get-request-parameters</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the list of all request parameter names in request-response</blockquote>
+<p>(<b>get-request-state</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>One of - in order - nil, :request-line-read, :headers-read or :body-read</blockquote>
+<p>(<b>get-request-stream</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the raw request stream from request-response (fails if get-request-body was done first)</blockquote>
+<p>(<b>get-request-sub-path</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the sub path list for this request (the uri components minus the server and web app prefixes)</blockquote>
+<p>(<b>get-response-header-value</b> request-response header-name)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the (first) response header value for header-name in request-response</blockquote>
+<p>(setf (<b>get-response-header-value</b> request-response header-name) value)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Set the response header value for header-name in request-response to value</blockquote>
+<p>(<b>get-response-mime-type</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the mime-type for this request-response's reply</blockquote>
+<p>(<b>get-response-state</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>One of - in order - nil, :response-line-written, :headers-written, :response-written or :response-flushed</blockquote>
+<p>(<b>get-response-status</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the statuc for this request-response's reply (:ok, :created, :not-found, :error or :moved)</blockquote>
+<p>(<b>get-response-stream</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Access the raw stream to write content to for this request-response (will commit headers if necessary)</blockquote>
+<p>(<b>get-s-http-server</b> server)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Access the S-HTTP-SERVER object inside server</blockquote>
+<p>(<b>get-server</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the web application server handling this request-response</blockquote>
+<p>(<b>get-session</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the session bound to this request-response</blockquote>
+<p>(<b>get-session-count</b> session-manager)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the number of known sessions</blockquote>
+<p>(<b>get-session-id</b> session)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the id that uniquely identifies this session</blockquote>
+<p>(<b>get-session-lifetime</b> session-manager)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return after how many seconds of idle time a session is destroyed</blockquote>
+<p>(<b>get-state</b> web-app)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the current state of object</blockquote>
+<p>(<b>get-static-prefix</b> web-app)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get this server's static prefix</blockquote>
+<p>(<b>get-static-root</b> web-app)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the static root (filesystem directory) for this web application</blockquote>
+<p>(<b>get-submit-text</b> form)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Access the submit button text of form</blockquote>
+<p>(<b>get-title</b> object)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the title of object</blockquote>
+<p>(<b>get-uri</b> request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the URI underlying this request-response</blockquote>
+<p>(<b>get-uri-string</b> debug-request-response)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Get the URI string underlying this request-response</blockquote>
+<p>(<b>get-value-field</b> web-form name)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Return the value field with name in web-form</blockquote>
+<p>(<b>get-web-app</b> name)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Get the web application known by name (return nil when not found)</blockquote>
+<p>(<b>get-web-form-definition</b> name)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Get the web form definition with name</blockquote>
+<p>(<b>hex-string->byte-vector</b> hex-string)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Convert a hex string to a byte vector, as '010FFF' becomes #(1 15 255)</blockquote>
+<p>(<b>hmac</b> data key &key (hash-start-function (function hash-start-place-holder)) (hash-update-function (function hash-update-place-holder)) (hash-finish-function (function hash-finish-place-holder)) (hash-block-length 64))&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Compute an RFC 2104 HMAC from the data and key sequences using hash-[start|update|finish]-function</blockquote>
+<p>(<b>hmac-md5</b> data key)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Do an RFC 2104 HMAC-MD5 on data and key</blockquote>
+<p>(<b>hmac-sha1</b> data key)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Do an RFC 2104 HMAC-SHA1 on data and key</blockquote>
+<p>(<b>html-message</b> request-response title message &rest args)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Render a simple page with a message using title and formatting message using args</blockquote>
+<p>(<b>html-page</b> (var request-response &key (pprint-html *pprint-html*) (html-prologue *html-prologue*)) &body body)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Generate contents for a whole page</blockquote>
+<p>(<b>html-part</b> (var request-response &key (pprint-html *pprint-html*)) &body body)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Generate contents for a part</blockquote>
+<p>(<b>init</b> web-app-server &optional options)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Initialize web-app-server using options</blockquote>
+<p>(<b>init-kpax</b> server-class &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Initialize the KPAX web application framework</blockquote>
+<p>(<b>init-localized-strings</b> &optional (location *default-strings-location*) (locales (quote (:nl :fr :en))))&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Initialize the builtin, simple localization source using location and locales</blockquote>
+<p>(<b>instanciate-web-form</b> name)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Create a new web form instance from the web form definition named by name</blockquote>
+<p>(<b>invalidate-all-sessions</b> session-manager)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Remove all sessions from session-manager</blockquote>
+<p>(<b>localized-format</b> stream key &rest args)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Translate key to stream in the context of *locale* and *localization-source*, using args to format</blockquote>
+<p>(<b>localized-string</b> key &rest args)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Translate key to a string in the context of *locale* and *localization-source*, using args to format</blockquote>
+<p>(<b>log-debug</b> object format-string &rest args)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Log a message at the debug level using format-string and args</blockquote>
+<p>(<b>log-error</b> object format-string &rest args)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Log a message at the error level using format-string and args</blockquote>
+<p>(<b>log-fatal</b> object format-string &rest args)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Log a message at the fatal level using format-string and args</blockquote>
+<p>(<b>log-info</b> object format-string &rest args)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Log a message at the info level using format-string and args</blockquote>
+<p>(<b>log-warn</b> object format-string &rest args)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Log a message at the warn level using format-string and args</blockquote>
+<p><b>logger</b>&nbsp;&nbsp;&nbsp;<i>class</i></p>
+<blockquote>A logger accepts log messages</blockquote>
+<blockquote>Class precedence list: <tt> logger standard-object t</tt></blockquote>
+<blockquote>Class init args: <tt> :cutoff</tt></blockquote>
+<p>(<b>logm</b> object level format-string &rest args)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Log a message at level defined by format-string and args to object</blockquote>
+<p>(<b>logout</b> request-response)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Generic logout hook</blockquote>
+<p>(<b>make-byte-vector</b> size &optional (initial-element 0))&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Make a byte vector of size bytes filled with initial-element</blockquote>
+<p>(<b>make-data-set-view</b> data-set action columns &key (page-size 20) sortable sort-order sort-column renderer localizer)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Create a new data set view</blockquote>
+<p>(<b>make-menu</b> spec)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Make a new menu based on spec</blockquote>
+<p>(<b>make-menubar-render-options</b> key-value-list)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Make new menubar render options by combining key-value-list with *default-menubar-render-options*</blockquote>
+<p>(<b>make-options</b> key-value-list &optional parent)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Combine the options in key-value-list with those in parent</blockquote>
+<p>(<b>make-translator</b> &rest args)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Make a new translator</blockquote>
+<p>(<b>make-web-form-render-options</b> key-value-list)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Make new web form render options by combining key-value-list with *default-web-form-render-options*</blockquote>
+<p>(<b>map-web-apps</b> function)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Apply function on each defined web application and return the result</blockquote>
+<p>(<b>maptree</b> function tree)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Apply function to all elements in tree (a cons), returning a new isomorphic tree with the results</blockquote>
+<p><b>menu</b>&nbsp;&nbsp;&nbsp;<i>class</i></p>
+<blockquote>A representation for a menu</blockquote>
+<blockquote>Class precedence list: <tt> menu menu-item standard-object t</tt></blockquote>
+<blockquote>Class init args: <tt> :description :action :parent :label :id :items</tt></blockquote>
+<p><b>menu-item</b>&nbsp;&nbsp;&nbsp;<i>class</i></p>
+<blockquote>A representation for a menu item</blockquote>
+<blockquote>Class precedence list: <tt> menu-item standard-object t</tt></blockquote>
+<blockquote>Class init args: <tt> :description :action :parent :label :id</tt></blockquote>
+<p><b>mod-lisp-server</b>&nbsp;&nbsp;&nbsp;<i>class</i></p>
+<blockquote>mod-lisp implementation of the KPAX web application server protocol</blockquote>
+<blockquote>Class precedence list: <tt> mod-lisp-server web-app-server session-manager attributes-mixin logger standard-object t</tt></blockquote>
+<blockquote>Class init args: <tt> :dynamic-prefix :static-prefix :hostname :debug-mode :cutoff :keep-alive</tt></blockquote>
+<p>(<b>not-yet-implemented</b> request-response)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Web function that outputs a not yet implemented message</blockquote>
+<p>(<b>note-inconsistent-request</b> reqeust-response)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Standard inconsistent request recording (setting request attribute :inconsistent-request to t)</blockquote>
+<p>(<b>parse-boolean</b> string)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Parse string as a Common Lisp boolean</blockquote>
+<p>(<b>parse-keyword</b> string)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Parse string as a Common Lisp keyword in package</blockquote>
+<p>(<b>parse-multipart-header</b> string)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Parse a line of the form header-name: header-value; att1-name='att1-value'; att2-name='att2-value' into (header-name header-value ((att1-name . att1-value) (att2-name . att2-value)))</blockquote>
+<p>(<b>parse-symbol</b> string &optional (package *package*))&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Parse string as a Common Lisp symbol in package</blockquote>
+<p>(<b>pause</b> web-app-server &optional options)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Temporarily and gracefully take KPAX off-line, toggle</blockquote>
+<p>(<b>pause-kpax</b> &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Take all KPAX web applications temporarily off-line, showing a 'mainteance in progress' page</blockquote>
+<p>(<b>reap-old-sessions</b> session-manager)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Remove all sessions from session-manager that are expired</blockquote>
+<p>(<b>reconstruct-web-form</b> request-response web-form-name)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Reconstruct a web form named web-form-name from request-response</blockquote>
+<p>(<b>redirect-to</b> request-response relative-url &rest args)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Redirect to another url, built from relative-url and args</blockquote>
+<p>(<b>render</b> object request-response &optional render-options)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Render object as HTML on request-response using render-options</blockquote>
+<p>(<b>render-menubar</b> menu request-response selected-page-id &optional (render-options *default-menubar-render-options*))&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Render menu as menubar with selected-page-id in HTML to request-response using render-options</blockquote>
+<p>(<b>render-menubar-ie-js-code</b> request-response)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Render the necessary IE-specific JavaScript code for menubars</blockquote>
+<p>(<b>render-tabs</b> menu request-response selected-page-id &optional (render-options *default-menubar-render-options*))&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Render menu as tabs with selected-page-id in HTML to request-response using render-options</blockquote>
+<p>(<b>report-inconsistent-request</b> request-response)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Standard inconsistent request reporter</blockquote>
+<p><b>request-response</b>&nbsp;&nbsp;&nbsp;<i>class</i></p>
+<blockquote>I represent a request-response from a server</blockquote>
+<blockquote>Class precedence list: <tt> request-response attributes-mixin standard-object t</tt></blockquote>
+<blockquote>Class init args: <tt> :server</tt></blockquote>
+<p>(<b>restart-kpax</b> &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Restart the KPAX web application server</blockquote>
+<p>(<b>restart-web-app</b> name &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Stop and start the web application known by name</blockquote>
+<p>(<b>run-kpax</b> &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Run the KPAX web application server</blockquote>
+<p><b>s-http-server</b>&nbsp;&nbsp;&nbsp;<i>class</i></p>
+<blockquote>S-HTTP-SERVER implementation of the KPAX web application server protocol</blockquote>
+<blockquote>Class precedence list: <tt> s-http-server web-app-server session-manager attributes-mixin logger standard-object t</tt></blockquote>
+<blockquote>Class init args: <tt> :dynamic-prefix :static-prefix :hostname :debug-mode :cutoff :s-http-server</tt></blockquote>
+<p>(<b>secure-random</b> limit)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Like cl:random, return a random number (<= 0 x limit) [same type as limit], using our secure MT random generator</blockquote>
+<p>(<b>secure-random-bytes</b> n)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Return a byte-vector of size n filled with secure random bytes</blockquote>
+<p>(<b>set-cookie</b> request-response name value path &optional expires)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Set the code with name and value for path in request-response (expires is :session or :never)</blockquote>
+<p>(<b>shutdown</b> web-app-server &optional options)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Shut down web-app-server using options</blockquote>
+<p>(<b>standard-web-form-element-renderer</b> request-response componentweb-form-field render-options)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Standard, builtin renderer for a component in a form using options</blockquote>
+<p>(<b>standard-web-form-renderer</b> request-response web-form render-options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Standard, builtin renderer for form using options</blockquote>
+<p>(<b>start-kpax</b> &key (server-class (quote mod-lisp-server)) (port 2001) (logstream *standard-output*))&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Do init-kpax & run-kpax in debug mode with extra logging</blockquote>
+<p>(<b>start-web-app</b> name &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Start the web application known by name, installing and publishing it</blockquote>
+<p>(<b>startup</b> web-app-server &optional options)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Start up web-app-server using options</blockquote>
+<p>(<b>static-url</b> request-response scope relative-url &rest args)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Generate a static URL in the scope (:server :webapp) of request-response using relative-url and args</blockquote>
+<p>(<b>stop-kpax</b> &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Stop the KPAX web application server</blockquote>
+<p>(<b>stop-web-app</b> name &rest options)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Stop the web application known by name, making it no longer accessible</blockquote>
+<p><b>stream-appender</b>&nbsp;&nbsp;&nbsp;<i>class</i></p>
+<blockquote>A stream appender writes log messages to a stream</blockquote>
+<blockquote>Class precedence list: <tt> stream-appender appender standard-object t</tt></blockquote>
+<blockquote>Class init args: <tt> :stream</tt></blockquote>
+<p>(<b>string->byte-vector</b> string)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Convert an 8-bit ASCII string to a byte vector</blockquote>
+<p>(<b>touch</b> object)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Update the last modified timestamp of object</blockquote>
+<p>(<b>translate</b> translator request-response parameter)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Translate parameter from request-response using translator</blockquote>
+<p>(<b>translate-integer</b> value)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Translate value to an integer</blockquote>
+<p>(<b>translate-keyword</b> value)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>Translate value to a keyword</blockquote>
+<p>(<b>uri-decode-for-query</b> string)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>URI decode string from a query parameter value</blockquote>
+<p>(<b>uri-encode-for-query</b> string)&nbsp;&nbsp;&nbsp;<i>function</i></p>
+<blockquote>URI encode string for use as a query parameter value</blockquote>
+<p>(<b>validate</b> component)&nbsp;&nbsp;&nbsp;<i>generic-function</i></p>
+<blockquote>Validate component by running all validators</blockquote>
+<p><b>web-app</b>&nbsp;&nbsp;&nbsp;<i>class</i></p>
+<blockquote>The representation of a KPAX web application</blockquote>
+<blockquote>Class precedence list: <tt> web-app web-app-in-server attributes-mixin standard-object t</tt></blockquote>
+<blockquote>Class init args: <tt> :static-root :option-list :dynamic-prefix :static-prefix :name</tt></blockquote>
+<p><b>web-app-server</b>&nbsp;&nbsp;&nbsp;<i>class</i></p>
+<blockquote>I represent a server delivering requests-response objects</blockquote>
+<blockquote>Class precedence list: <tt> web-app-server session-manager attributes-mixin logger standard-object t</tt></blockquote>
+<blockquote>Class init args: <tt> :cutoff :debug-mode :hostname :static-prefix :dynamic-prefix</tt></blockquote>
+<font size=-1><p>Documentation generated by <a href="http://homepage.mac.com/svc/lispdoc/">lispdoc</a> running on LispWorks</p></font></body></html>

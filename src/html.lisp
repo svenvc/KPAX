@@ -37,7 +37,7 @@
     (:label
      :id id
      :name name
-     :value value)))
+     :value (escape-string (princ-to-string value)))))
 
 (defun generate-text-field (request-response
                             name
@@ -52,7 +52,7 @@
     (:input
      :type "text"
      :name name
-     :value value
+     :value (escape-string (princ-to-string value))
      :size size
      :maxlength maxlength
      :readonly (when readonly "readonly")
@@ -70,7 +70,7 @@
     (:input
      :type "password"
      :name name
-     :value value
+     :value (escape-string (princ-to-string value))
      :size size
      :maxlength maxlength
      :readonly (when readonly "readonly"))))
@@ -83,7 +83,7 @@
     (:input
      :type "hidden"
      :name name
-     :value value)))
+     :value (escape-string (princ-to-string value)))))
 
 (defun generate-text-area (request-response
                            name
@@ -161,7 +161,7 @@
            :do
            (htm
             (:option 
-             :value value 
+             :value value
              :selected (when (if multiple 
                                  (member value current-value)
                                (funcall test value current-value)) 

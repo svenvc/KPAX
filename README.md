@@ -3,7 +3,7 @@
 ## A Common Lisp Application Framework
 
 `KPAX` is a Common Lisp Web Application Framework. 
-Altough KPAX is quite mature and has been in production use for years, the documentation is currently not good enough to support use by the general public.
+Although KPAX is quite mature and has been in production use for years, the documentation is currently not good enough to support use by the general public.
 
 ### Contents
 

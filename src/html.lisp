@@ -4,7 +4,7 @@
 ;;;;
 ;;;; HTML generation support
 ;;;;
-;;;; Copyright (C) 2004 Sven Van Caekenberghe, Beta Nine BVBA. All Rights Reserved.
+;;;; Copyright (C) 2004,2014 Sven Van Caekenberghe, Beta Nine BVBA. All Rights Reserved.
 ;;;;
 ;;;; You are granted the rights to distribute and use this software
 ;;;; as governed by the terms of the Lisp Lesser GNU Public License
@@ -23,19 +23,29 @@
    generate-radiobutton
    generate-select))
 
-(defun generate-submit (request-response label &optional name)
+(defun generate-submit (request-response 
+                        label 
+                        &optional
+                        name 
+                        &key 
+                        class)
   "Generate a submit type input tag"
   (html-part (out request-response)
-    (:input :type "submit" :value label :name name)))
+    (:input :type "submit" :class class :value label :name name)))
 
 (defun generate-label (request-response
                        name
                        id
-                       value)
+                       value
+                       &key
+                       class
+                       for)
   "Generate a label tag"
   (html-part (out request-response)
     (:label
      :id id
+     :class class
+     :for for
      :name name
      :value (escape-string (princ-to-string value)))))
 
@@ -43,6 +53,8 @@
                             name
                             value
                             &key
+                            class
+                            id
                             size
                             maxlength
                             readonly
@@ -51,6 +63,8 @@
   (html-part (out request-response)
     (:input
      :type "text"
+     :class class
+     :id id
      :name name
      :value (escape-string (princ-to-string value))
      :size size
@@ -62,6 +76,7 @@
                                 name
                                 value
                                 &key
+                                class
                                 size
                                 maxlength
                                 readonly)
@@ -69,6 +84,7 @@
   (html-part (out request-response)
     (:input
      :type "password"
+     :class class
      :name name
      :value (escape-string (princ-to-string value))
      :size size
@@ -77,11 +93,14 @@
 
 (defun generate-hidden-field (request-response
                               name
-                              value)
+                              value
+                              &key
+                              class)
   "Generate a hidden type form input tag"
   (html-part (out request-response)
     (:input
      :type "hidden"
+     :class class
      :name name
      :value (escape-string (princ-to-string value)))))
 
@@ -89,12 +108,14 @@
                            name
                            value
                            &key
+                           class
                            cols
                            rows
                            readonly)
   "Generate a textarea form tag"
   (html-part (out request-response :pprint-html nil)
     (:textarea 
+     :class class
      :name name
      :rows rows
      :cols cols
@@ -105,6 +126,7 @@
                           name 
                           value 
                           &key 
+                          class
                           (true-value "T") 
                           (checked-value "checked") 
                           label
@@ -114,6 +136,7 @@
   (html-part (out request-response)
     (:input
      :type "checkbox" 
+     :class class
      :name name 
      :id id
      :value true-value 
@@ -125,12 +148,14 @@
                              name 
                              value 
                              &key 
+                             class
                              (true-value "T") 
                              (checked-value "checked") 
                              label)
   "Generate a radio type form input tag with optional label"
   (html-part (out request-response)
     (:input
+     :class class
      :type "radio" 
      :name name 
      :value true-value 
@@ -142,6 +167,8 @@
                         values-list
                         current-value
                         &key
+                        class
+                        id
                         (selected-value "selected")
                         multiple
                         (multiple-value "multiple")
@@ -152,6 +179,8 @@
   "Generate a select tag with nested option tags, indicating the current selection"
   (html-part (out request-response)
     (:select 
+     :class class
+     :id id
      :name name 
      :size size 
      :multiple (when multiple multiple-value)

@@ -96,7 +96,9 @@
   (s-http-server:get-http-version (get-s-http-server-request request-response)))
 
 (defmethod get-request-ip-address ((request-response s-http-server-request-response))
-  (s-sysdeps:get-socket-stream-property (get-socket-stream request-response) :remote-host))
+  "If we are behind a proxy, use X-Forwarded-For if set"
+  (or (get-request-header-value request-response "X-Forwarded-For")
+      (s-sysdeps:get-socket-stream-property (get-socket-stream request-response) :remote-host)))
 
 (defmethod get-request-header-value ((request-response s-http-server-request-response) header-name)
   (cdr (assoc header-name (s-http-server:get-headers (get-s-http-server-request request-response)) 

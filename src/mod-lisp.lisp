@@ -247,7 +247,7 @@
   ;; but it could be X-Forwarded-For somebody else
   ;; security note: the X-Forwarded-For header could be faked by the client,
   ;; and should be checked by requiring X-Forwarded-Host == remote-ip-address (ip/dns)
-  (or (get-request-header-value request-response "X-Forwared-For")
+  (or (get-request-header-value request-response "X-Forwarded-For")
       (get-request-header-value request-response "remote-ip-addr")))
 
 (defmethod get-request-stream ((request-response mod-lisp-request-response))

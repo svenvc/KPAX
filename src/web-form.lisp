@@ -575,15 +575,18 @@
     (dolist (field (get-value-fields web-form))
       (let ((parameter-values (get-request-parameter-values request-response (get-name field)))
             (parser (get-parser (get-definition field)))
+            (is-boolean (eql (get-option field :values) :boolean))
             (multi-valued-p (eq :multiple (get-option field :selection)))
             parsed-value)
-        (cond ((null parameter-values) 
+        (cond ((and (null parameter-values) (not is-boolean)) 
                (setf parsed-value nil)) ;; don't bother parsing nil
               ((and (not multi-valued-p)
                     (= 1 (length parameter-values))) 
                (setf parsed-value (funcall parser (first parameter-values))))
               (multi-valued-p 
                (setf parsed-value (mapcar parser parameter-values)))
+              (is-boolean
+               (setf parsed-value (funcall parser nil))) ;; value is absent here
               (t
                (error "Did not expect multiple values")))
         ;; what to do if parse failed (nil for now)

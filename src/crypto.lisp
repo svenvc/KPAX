@@ -52,7 +52,7 @@
                                       (ash (read-byte in) 32))))))))
 
 (defvar *kpax-random-state* (progn
-                              (add-entropy-to-dev-random)
+                              #+nil(add-entropy-to-dev-random)
                               (mt:make-mt-random-state (get-secure-random-seed 624)))
   "Secure random state for MT random generator seeded from /dev/random")
 

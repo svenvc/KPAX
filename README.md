@@ -92,7 +92,7 @@ beginning of documentation.
 
 ### API Reference
 
-There is automatically generated [API Reference](API.md) documentation
+There is automatically generated [API Reference](doc/API.md) documentation
 available for the KPAX package.
 
 ### Mailinglist

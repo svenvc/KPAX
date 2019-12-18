@@ -68,7 +68,24 @@ Movie, [Episode 2: (Re)writing Reddit in Lisp is 20 minutes and 100
 lines](http://homepage.mac.com/svc/LispMovies/index.html)[dead link], that is
 actually a very good tutorial on using KPAX.
 
-    ;; to be completed later ;-)
+````
+CL-USER 1 > (in-package :s-http-server)
+#<The S-HTTP-SERVER package, 90/128 internal, 31/64 external>
+
+S-HTTP-SERVER 2 > (defvar *server* (make-s-http-server))
+*SERVER*
+
+S-HTTP-SERVER 3 > (start-server *server*)
+;; S-HTTP-SERVER: Started a new server on port 1701
+#<S-HTTP-SERVER "s-http-server" port 1701 running 10C5F6EB>
+
+S-HTTP-SERVER 4 > (register-context-handler *server* "/my-site" 'static-resource-handler :arguments '("/var/www/"))
+((STATIC-RESOURCE-HANDLER "/my-site" "/var/www/") (S-HTTP-SERVER-HANDLER "/s-http-server" :BUILTIN))
+
+S-HTTP-SERVER 5 > (stop-server *server*)
+;; S-HTTP-SERVER: Stopped server
+#<S-HTTP-SERVER "s-http-server" port 1701 not running 10C5F6EB>
+````
 
 There are some recent posting to the KPAX-DEVEL mailing list that are a
 beginning of documentation.

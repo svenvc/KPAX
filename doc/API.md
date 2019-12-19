@@ -2,13 +2,13 @@
 
 S-HTTP-SERVER is a minial standalone Common Lisp HTTP Server
 
-## *http-server-identification*   variable
+## \*http-server-identification\*   variable
 
 Identification string sent as value of the 'Server' HTTP Response Header
 
 Initial value: "S-HTTP-SERVER LispWorks 4.4.6"
 
-## *http-server-port*   variable
+## \*http-server-port\*   variable
 
 Default port used when creating a new S-HTTP-SERVER
 

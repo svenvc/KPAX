@@ -1,0 +1,55 @@
+body {
+	margin: 10px 10px 10px 10px;
+}
+h1 {
+	font-size: 30px;
+	font-family: Monaco, mono-spaced;
+	line-height: 1.2em;
+	border: 2px solid black;
+	padding: 5px 5px 5px 5px;
+	margin: 2px 2px 2px;
+	text-align: right;
+	background: black;
+	color: green;
+}
+a:link, a:visited, a:active, a:hover {
+	text-decoration: none; 
+	text-align: center;
+	border: 2px solid black;
+	padding: 5px 10px 5px 10px;
+	margin: 2px 2px 2px;
+	background: #999;
+	color: white;
+}
+a:hover {
+	background: black;
+	color: white;
+}
+a:active {
+	background: black;
+	color: white;
+}
+#calculator {
+	font-size: 30px;
+	font-family: Georgia, "New Century Schoolbook", Times, serif;
+	padding: 5px;
+	background:  #ccc;
+	width: 253px;
+	height: 320px;
+}
+#numpad {
+	float: left;
+	width: 190px;
+}
+.row a {
+	width: 35px; 
+	display: block;
+	float: left;
+}
+.row {
+	clear: left;
+}
+#operations {
+	float: left;
+}
+

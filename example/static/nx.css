@@ -1,0 +1,550 @@
+/*<group=Global Settings>*/
+
+body {
+  background: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+p {
+  width: 600px;
+  padding: 0 20px 10px 10px;
+}
+
+/*</group>*/
+
+.NX_message {
+	color: green;
+	background: transparent;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+/*<group=Labels>*/
+	
+.NX_black_label, .NX_gray_label {
+  color: white;
+  padding: 3px;
+  font-weight: bold;
+}
+.NX_black_label {
+  background: black;
+}
+.NX_gray_label {
+  background: gray;
+}
+
+/*</group>*/
+
+/*<group=Panels>*/
+
+.NX_panel {
+  background: silver;
+  width: 600px;
+  padding: 0px 10px 10px 10px;
+}
+
+.NX_panel .NX_title {
+  background: silver;
+  font-weight: bold;
+  padding: 0 5px 0 5px;
+  position: relative;
+  top: 8px;
+  left: 10px;
+}
+.NX_border {
+  border: 2px groove white;
+  padding: 5px;
+}
+.NX_panel p {
+  width: 575px;
+  background: whitesmoke;
+  padding: 5px;
+}
+.NX_panel pre {
+  font-size: 11px;
+  background: whitesmoke;
+  padding: 5px;
+  overflow: auto;
+}
+/*</group>*/
+
+/*<group=Buttons>*/
+	
+a.NX_button, a.NX_button:hover, a.NX_button:active, a.NX_button:visited {
+  color: black;
+  font-weight:bold;
+}
+
+a.NX_button {
+  background: silver;
+  border-top: 1px solid whitesmoke;
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  text-decoration: none;
+}
+a.NX_button:hover {
+  text-decoration:underline;
+}
+a.NX_button:active {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid whitesmoke;
+  border-bottom: 1px solid whitesmoke;
+}
+table.NX_table td a.NX_button {
+  padding: 2px;
+}
+/*</group>*/
+
+/*<group=Buttons Groups>*/
+
+.NX_button_group a.NX_button, .NX_equal_button_group a.NX_button {
+  margin: 0px 2px 0px 2px;
+}
+.NX_equal_button_group {
+  clear: right;
+}
+.NX_equal_button_group a.NX_button, .NX_vertical_button_group a.NX_button {
+  text-align: center;
+  width: 100px;
+  padding: 5px 0px 5px 0px;
+}
+.NX_equal_button_group a.NX_button {
+  display: block;
+  float: left;
+}
+.NX_equal_button_group br {
+  clear: both;
+  margin-bottom: 5px;
+}
+.NX_vertical_button_group a.NX_button {
+  display: block;
+  margin: 2px;
+}
+.NX_button_group {
+  padding-top: 5px; 
+  height: 20px; 
+  margin: 2px 0 2px 0;
+}
+table.NX_table .NX_button_group {
+  padding-top: 2px; 
+  height: 18px; 
+  margin: 1px;
+}
+
+/*</group>*/
+
+/*<group=Tables>*/
+	
+.NX_table {
+  margin: 4px 0px 4px 0px;
+  padding: 0px 0px 0px 0px;
+  border: 1px solid black;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  empty-cells: hide;
+  text-align:left
+}
+.NX_table td {
+  padding: 2px 2px 2px 2px;
+  margin: 0px 0px 0px 0px;
+  border: 1px solid black;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  text-align:left; 
+}
+.NX_table th {
+  padding: 2px 2px 2px 2px;
+  margin: 0px 0px 0px 0px;
+  background: silver;
+  border: 1px solid black;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  text-align:left;
+}
+.NX_table tr.NX_even_row {
+  background: #DCDCDC;
+}
+.NX_table tr.NX_odd_row {
+  background: #F5F5F5;
+}
+
+.NX_table td.NX_navigation {
+	color: white;
+	background-color: black;
+	padding: 5px;
+	text-align: center;
+}
+.NX_table td.NX_navigation a,
+.NX_table td.NX_navigation a:visited,
+.NX_table td.NX_navigation a:active {
+	color: black;
+	background-color: white;
+	text-decoration: none;
+	padding-left:  2px;
+	padding-right: 2px;
+}
+.NX_table td.NX_navigation a:hover {
+	color: white;
+	background-color: black;
+}
+
+.NX_navigation_arrows {
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.NX_navigation_arrows a {
+	margin-right: 2px;
+}
+
+.NX_navigation_arrows_left {
+	margin-right: 5px;
+}
+/*</group>*/
+
+/*<group=Login Panels>*/
+	
+.NX_login_panel {
+  width:400px;
+  background: silver;
+  border-top: 2px solid #DCDCDC;
+  border-left: 2px solid #DCDCDC;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+  padding: 0px 0px 0px 0px;
+}
+.NX_login_panel .NX_title {
+  padding-top: 5px;
+  font-size:24px;
+  font-weight:bold;
+  text-transform:uppercase;
+  color: #222;
+  border-bottom: 1px solid #222;
+  height: 45px;
+}
+.NX_login_panel .NX_fields {
+  margin: 0px 0px 0px 0px;
+  padding: 5px 0px 5px 0px;
+  border-top: 1px solid whitesmoke;
+  border-bottom: 1px solid #222;
+}
+.NX_login_panel label {
+  text-align:right;
+  font-weight:bold;
+  margin-right:5px;
+}
+.NX_login_panel .NX_buttons {
+  padding: 20px 0px 0px 0px;
+  border-top: 1px solid whitesmoke;
+  height: 30px;
+}
+/*</group>*/
+
+/*<group=Forms>*/
+	
+.NX_form form {
+  	min-width: 70%;
+  	max-width: 90%;
+	background: silver;
+	padding: 5px;
+	margin-top: 10px;
+}
+.NX_form form .title {
+  font-weight:bold;
+  text-decoration:underline;
+}
+.NX_form form .intro {
+  margin-top: 5px;
+}
+.NX_form form .form-comments {
+  margin-top: 5px; 
+  font-weight:bold;
+}
+.NX_form form .form-comments ul {
+  margin: 3px 0 0 0; 
+  list-style-type:square; 
+  color: green;
+}
+.NX_form .warning-image {
+  margin: 3px;
+  float:left;
+}
+.NX_form .form-validation-errors {
+  background: red;
+  color: white;
+  font-weight: bold; 
+  border: 1px solid white;
+  margin: .5em 2em;
+  margin-left: 0px;
+  width: 100%;
+}
+.NX_form .form-validation-errors ul {
+}
+.NX_form input, .NX_form select, .NX_form textarea {
+  margin-left: .5em;
+}
+.NX_form fieldset {
+	margin: 1em 0;
+	padding: .3em 1em;
+	border: 2px groove whitesmoke;
+}
+.NX_form fieldset br {
+	display: none;
+}
+.NX_form legend {
+	font-weight: bold;
+	color: black;
+	padding: .2em .5em;
+}
+.NX_form fieldset div {
+/*	clear: both; */ /* safari troubles with min-height-hack */
+	margin: .3em 0;
+	position: relative;
+}
+.NX_form fieldset div span.field-comment {
+	font-size: x-small;
+	font-weight: bold;
+	color: black;
+	margin-left: 3em;
+}
+* html .NX_form fieldset div span {
+	font-size: 85%;
+	margin-left: 16em;
+	padding: .3em;
+	display: block;
+}
+
+.NX_form label, .NX_form fieldset div.cr span.cr {
+	margin: 0;
+	display: block;
+	width: 13em;
+	text-align: right;
+	float: left;
+}
+
+.NX_form div.cr span.field-comment {
+  margin-top: 3px;
+  width: 32.5em;
+  display: block;
+  text-align: right;
+}
+.NX_form div.validation-error {
+  margin-left: 13.3em;
+}
+.NX_form span.arrow {
+  background: transparent;
+  color: red;
+  font-weight: bold;
+  margin-right: 0px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.NX_form span.validation-error {
+  background: transparent;
+  color: red;
+  font-weight: bold;
+  margin-right: 0px;
+  padding: 2px;
+}
+.NX_form fieldset div.cr label {
+	text-align: left;
+	margin-left: 13em;
+	width: auto;
+	float: none;
+}
+.NX_form fieldset div.chk label {
+  text-align: left;
+  float:none;
+  margin-left: 13em;
+  width: auto;
+}
+.NX_form .required {
+	color: green;
+}
+.NX_form .buttons {
+	text-align: right;
+}
+.NX_form .removed {
+	display: none !important;
+}
+/*</group>*/
+
+/*<group=NX_menubar>*/
+
+.shit  {
+	padding: 300px;
+}
+.NX_menubar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 15px;
+}
+
+.NX_menubar ul li {
+  	float:left;
+	position: relative;
+	width: 90px;
+	background: silver;
+	border: 1px outset darkgray;
+	text-align: left;
+}
+
+.NX_menubar ul li ul {
+	position: absolute;
+	top:  104%;
+ 	left: -1px;
+	border: none;
+	display: none;
+}
+
+.NX_menubar ul li ul li {
+	display: block;
+	float: none;
+}
+
+.NX_menubar ul li:hover ul, .NX_menubar ul li.over ul,
+.NX_menubar ul li.selected:hover ul, .NX_menubar ul li.selectedover ul {
+  display: block;
+}
+
+.NX_menubar ul li a {
+  color: black;
+  text-decoration: none;
+  padding: 3px;
+  display: block;
+}
+
+.NX_menubar ul li a:hover {
+  color: white;
+  background-color: black;
+}
+
+.NX_menubar ul li ul li a {
+  text-decoration: none;
+  display: block;
+}
+
+.NX_menubar ul li.selected {
+  color: black;
+  background-color: #F5F5F5;
+}
+/*</group>*/
+
+/*<group=NX_menu>*/
+
+* html .NX_menu ul li { float: left; }
+* html .NX_menu ul li a { height: 1%; }
+
+.NX_menu ul {
+  	margin: 0;
+  	padding: 0;
+  	list-style-type: none;
+  	width:  100px;
+}
+
+.NX_menu ul li {
+  	position: relative;
+  	color: black;
+  	background: silver;
+  	border: 1px outset darkgray;
+}
+
+.NX_menu li ul {
+  	position: absolute;
+  	left: 101%;
+  	top:  0;
+  	display: none;
+}
+
+.NX_menu ul li a {
+	color: black;
+	background: transparent;
+  	text-decoration: none;
+  	display: block;
+  	padding: 5px;
+}
+
+.NX_menu ul li a:hover, .NX_menu ul li.selected a:hover,.NX_menu ul li ul li a:hover {
+  	background: black;
+  	color: white;
+}
+.NX_menu ul li:hover ul, .NX_menu ul li.over ul {
+	display: block;
+  	z-index: 1;
+}
+
+.NX_menu ul li.selected > a {
+  	background: whitesmoke;
+  	color: black;
+}
+
+/*</group>*/
+
+/*<group=NX_tabbed menubar>*/
+
+.NX_tabbed_menubar {
+  background: silver;
+  width: 600px;
+  padding: 0px 10px 10px 10px;
+}
+
+.NX_tab_content {
+  border: 2px groove white;
+  padding: 5px;
+}
+.NX_tab_content p {
+  width: 575px;
+  background: whitesmoke;
+  padding: 5px;
+}
+.NX_tab_content pre {
+  font-size: 11px;
+  background: whitesmoke;
+  padding: 5px;
+  overflow: auto;
+}
+
+.NX_tabbed_menubar ul {
+  font-weight: bold;
+  position: relative;
+  left: 0px;
+  top: 9px;
+  list-style-type: none;
+  padding: 0;
+  margin: auto;
+  width: 90%;
+  text-align: center;
+}
+
+.NX_tabbed_menubar ul li {
+	display: inline;
+	color:  black;
+	background-color: whitesmoke;
+}
+
+.NX_tabbed_menubar ul li a {
+	text-decoration: none;
+	color: black;
+	background: silver;
+	border:  1px outset darkgray;
+	padding: 2px 30px 2px 30px;
+}
+
+.NX_tabbed_menubar ul li.selected a {
+	color: black;
+	background-color: whitesmoke;
+	border: 1px inset darkgray;
+}
+
+.NX_tabbed_menubar ul li:hover a {
+	color: white;
+	background: black;
+}
+
+/*</group>*/

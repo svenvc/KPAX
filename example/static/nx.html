@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>NX Web Application Style Demo</title>
+  <link rel="stylesheet" type="text/css" href="nx.css" />
+</head>
+
+<body>
+
+<h1>NX Web Application Style Demo</h1>
+<p>
+  Welcome to the NX Web Application Style Demo. 
+  NX is a CSS style sheet that can be used to give HTML pages of Web Applications a certain look and feel.
+  NX takes over some design cues from the NeXT GUI.
+  The NX CSS was developed as part of the KPAX Common Lisp Web Application Framework.
+</p>
+<p>
+  By default a web page is white, text is black.
+  We use Helvetica (or the sans-serif font should Helvetica be unavailable) in size 13px.
+  Paragraphs are are intended 10px and limited to 600px width for readability.
+</p>
+
+<h2>Labels</h2>
+<p>
+  NX uses a limited set of grayscale colors. Labels in rectangles with different backgrounds are one element of the NX look.
+</p>
+<span class="NX_black_label">This is a black label</span>
+<span class="NX_gray_label">This is a gray label</span>
+
+<h2>Panels</h2>
+<p>
+  Panels are used to group and optionally label a number of components.
+</p>
+<div class="NX_panel">
+<span class="NX_title">The sw_vers command</span>
+<div class="NX_border">
+<p>
+  The default width is 600px but can be overridden locally.
+  This is the output of the <tt>sw_vers</tt> command:
+</p>
+<pre>
+[sven@voyager:~/Tmp]$ vi /etc/httpd/kpax.conf 
+[sven@voyager:~/Tmp]$ sw_vers
+ProductName:    Mac OS X
+ProductVersion: 10.3.5
+BuildVersion:   7M34
+</pre>
+</div>
+</div>
+
+<h2>Buttons</h2>
+<p>
+  Buttons are implemented as styled links, here shown horizontally as a button group.
+</p>
+<div class="NX_button_group">
+  <a class="NX_button" href="do?action=run" title="Run this script">Run Script</a>
+  <a class="NX_button" href="do?action=run" title="Run another script">Run Another Script</a>
+  <a class="NX_button" href="do?action=run" title="OK">OK</a>
+  <A class="NX_button" href="do?action=run" title="Install Mac OS X Server 10.4">Install Mac OS X Server 10.4</a>
+</div>
+<P>
+  An optional button group makes all buttons of an equal size (100 px), and centers their titles.
+</p>
+<div class="NX_equal_button_group">
+  <a class="NX_button" href="do?action=run" title="Cancel">Cancel</a>
+  <a class="NX_button" href="do?action=run" title="Don't Save">Don't Save</a>
+  <a class="NX_button" href="do?action=run" title="Save">Save</a>
+  <br /><!-- important-->
+</div>
+<p>
+  Buttons can also be shown vertically, they are of equal size.
+</p>
+<div class="NX_vertical_button_group">
+  <a class="NX_button" href="do?action=run" title="Cancel">Cancel</a>
+  <a class="NX_button" href="do?action=run" title="Don't Save">Don't Save</a>
+  <a class="NX_button" href="do?action=run" title="Save">Save</a>
+</div>
+<h2>Menus</h2>
+<p>
+  Menus are essentially styled unordered list (can be nested)
+</p>
+
+<h3>The NX Menubar (horizontal bar)</h3>
+<div class='NX_menubar'>
+  <ul>
+    <li><a href='/kpax/dynamic/menu1/menu1-index'>Home</a></li>
+    <li><a href='/kpax/dynamic/menu1/menu1-red'>Red</a></li>
+    <li><a href='/kpax/dynamic/menu1/menu1-green'>Green</a></li>
+    <li><a href='/kpax/dynamic/menu1/menu1-blue'>Blue</a></li>
+    <li class='selected'><a href="this">Extra</a>
+      <ul>
+        <li class='selected'><a href='/kpax/dynamic/menu1/menu1-foo'>Foo</a></li>
+        <li><a href='/kpax/dynamic/menu1/menu1-bar'>Bar</a></li>
+      </ul>
+    </li>
+    <li><a href='/kpax/dynamic/menu1/menu1-basic-help'>Help</a>
+      <ul>
+        <li><a href='/kpax/dynamic/menu1/menu1-open'>Open</a></li>
+        <li><a href='/kpax/dynamic/menu1/menu1-close'>Close</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div style="clear: both">&nbsp;</div>
+
+<h3>The NX Menu</h3>
+<div class='NX_menu'>
+  <ul>
+    <li><a href='/kpax/dynamic/menu1/menu1-index'>Home</a></li>
+    <li><a href='/kpax/dynamic/menu1/menu1-red'>Red</a></li>
+    <li><a href='/kpax/dynamic/menu1/menu1-green'>Green</a></li>
+    <li><a href='/kpax/dynamic/menu1/menu1-blue'>Blue</a></li>
+    <li class='selected'><a href="this">Extra</a>
+      <ul>
+        <li class='selected'><a href='/kpax/dynamic/menu1/menu1-foo'>Foo</a></li>
+        <li><a href='/kpax/dynamic/menu1/menu1-bar'>Bar</a></li>
+      </ul>
+    </li>
+    <li><a href='/kpax/dynamic/menu1/menu1-basic-help'>Help</a>
+      <ul>
+        <li><a href='/kpax/dynamic/menu1/menu1-open'>Open</a></li>
+        <li><a href='/kpax/dynamic/menu1/menu1-close'>Close</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div style="clear: both">&nbsp;</div>
+
+<h2>Tabbed panels or pages (a menu variation)</h2>
+
+<div class='NX_tabbed_menubar'>
+  <ul>
+    <li><a href='/kpax/dynamic/menu1/menu1-index'>Home</a></li>
+    <li class='selected'><a href="this">Extra</a></li>
+    <li><a href='/kpax/dynamic/menu1/menu1-green'>Green</a></li>
+  </ul>
+  <div class="NX_tab_content">
+  <pre>
+  [sven@voyager:~/Tmp]$ vi /etc/httpd/kpax.conf
+  [sven@voyager:~/Tmp]$ sw_vers
+  ProductName:    Mac OS X
+  ProductVersion: 10.3.5
+  BuildVersion:   7M34
+  </pre>
+  </div>
+</div>
+
+<h2>Tables</h2>
+<p>
+  NX uses clean and simple tables with thin borders.
+</p>
+<table class="NX_table" cellspacing="0">
+  <tr>
+    <th>Decimal</th>
+    <th>Roman</th>
+    <th>English</th>
+    <th>French</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>I</td>
+    <td>One</td>
+    <td>Un</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>II</td>
+    <td>Two</td>
+    <td>Deux</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>III</td>
+    <td>Three</td>
+    <td>Trois</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>IV</td>
+    <td>Four</td>
+    <td>Quatre</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>V</td>
+    <td>Five</td>
+    <td>Cinq</td>
+  </tr>
+</table>
+<p>
+  The previous table had no width specification, the next one has a width of 100%.
+  By using a special class on TR tags, you can have alternating row colors.
+</p>
+<table class="NX_table" width="100%" cellspacing="0">
+  <tr>
+    <th>Decimal</th>
+    <th>Roman</th>
+    <th>English</th>
+    <th>French</th>
+  </tr>
+  <tr class="NX_odd_row">
+    <td>1</td>
+    <td>I</td>
+    <td>One</td>
+    <td>Un</td>
+  </tr>
+  <tr class="NX_even_row">
+    <td>2</td>
+    <td>II</td>
+    <td>Two</td>
+    <td>Deux</td>
+  </tr>
+  <tr class="NX_odd_row">
+    <td>3</td>
+    <td>III</td>
+    <td>Three</td>
+    <td>Trois</td>
+  </tr>
+  <tr class="NX_even_row">
+    <td>4</td>
+    <td>IV</td>
+    <td>Four</td>
+    <td>Quatre</td>
+  </tr>
+  <tr class="NX_odd_row">
+    <td>5</td>
+    <td>V</td>
+    <td>Five</td>
+    <td>Cinq</td>
+  </tr>
+</table>
+<p>
+  It is also possible to have buttons inside tables.
+</p>
+<table class="NX_table" cellspacing="0">
+  <tr>
+    <th>ID</th>
+    <th>Person</th>
+    <th>Actions</th>
+  </tr>
+  <tr class="NX_odd_row">
+    <td>1</td>
+    <td>Bill Clinton</td>
+    <td valign="middle">
+      <div class="NX_button_group">
+      <a class="NX_button" href="do?action=view&id=1" title="View">View</a>
+      <a class="NX_button" href="do?action=edit&id=1" title="Edit">Edit</a>
+      <a class="NX_button" href="do?action=delete&id=1" title="Delete">Delete</a>
+      </div>
+    </td>
+  </tr>
+  <tr class="NX_even_row">
+    <td>2</td>
+    <td>Ronald Reagan</td>
+    <td></td>
+  </tr>
+  <tr class="NX_odd_row">
+    <td>3</td>
+    <td>John Kennedy</td>
+    <td></td>
+  </tr>
+  <tr class="NX_even_row">
+    <td>4</td>
+    <td>Richard Nixon</td>
+    <td></td>
+  </tr>
+  <tr class="NX_odd_row">
+    <td>5</td>
+    <td>George Bush</td>
+    <td></td>
+  </tr>
+</table>
+
+<h2>Forms</h2>
+<p>The following example form was generated by the NKPAX form framework and styled by NX.</p>
+<div class="NX_form">
+  <form action='' method='post'>
+    <input type='hidden' name='form-id' value='5' />
+        <div class='title'>
+          Demo User
+        </div>
+        <fieldset> <legend>Personal Info </legend>
+        <div>
+          <label>Fullname : </label>
+          <input type='text' name='FULLNAME' value='' size='32' />
+        </div>
+        <br />
+        <div>
+          <label> <span class='required'> * </span>Username : </label>
+          <input type='text' name='USERNAME' value='' size='10' />
+        </div>
+        <br />
+        <div>
+          <label>Password : </label>
+          <input type='password' name='PASSWORD' value='' size='10' />
+        </div>
+        <br />
+        <div>
+          <label>Password : </label>
+          <input type='password' name='PASSWORD2' value='' size='10' />
+        </div>
+        <br />
+        <div class='cr'>
+          <span class='cr'>Gender : </span> <label>
+          <input type='radio' name='GENDER' value='MALE' />
+          Male </label> <label>
+          <input type='radio' name='GENDER' value='FEMALE' />
+          Female </label>
+        </div>
+        <br />
+        <div>
+          <label> <span class='required'> * </span>Age : </label>
+          <input type='text' name='AGE' value='0' size='4' />
+        </div>
+        <br />
+        </fieldset> <fieldset> <legend>Admin Info </legend>
+        <div>
+          <label>Notes : </label>
+          <textarea name='NOTES' rows='10' cols='40'>
+          </textarea>
+        </div>
+        <br />
+        <div class="chk">
+          <label>
+          <input type='checkbox' name='ENABLED-P' value='T' /> Enabled
+          </label>
+        </div>
+        <br />
+        </fieldset> 
+        <fieldset><legend>Preferences </legend>
+        <div class='cr'>
+          <span class='cr'>Interests : </span>
+          <label><input type='checkbox' name='INTERESTS' value='SEX' />Sex</label>
+          <label><input type='checkbox' name='INTERESTS' value='DRUGS' />Drugs</label>
+          <label> <input type='checkbox' name='INTERESTS' value='ROCK-AND-ROLL' />Rock-And-Roll</label>
+          <label> <input type='checkbox' name='INTERESTS' value='HACKING' />Hacking</label>
+        </div>
+        <br />
+        <div>
+          <label>Language: </label>
+          <select name='LANGUAGE'>
+            <option value='ENGLISH'>
+              English
+            </option>
+            <option value='FRENCH'>
+              French
+            </option>
+            <option value='DUTCH'>
+              Dutch
+            </option>
+            <option value='GERMAN'>
+              German
+            </option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label>Music-Tastes: </label>
+          <select name='MUSIC-TASTES' multiple='multiple'>
+            <option value='ROCK'>
+              Rock
+            </option>
+            <option value='POP'>
+              Pop
+            </option>
+            <option value='PUNK'>
+              Punk
+            </option>
+            <option value='ALTERNATIVE'>
+              Alternative
+            </option>
+            <option value='JAZZ'>
+              Jazz
+            </option>
+            <option value='NEW-WAVE'>
+              New-Wave
+            </option>
+          </select>
+        </div>
+        <br />
+        </fieldset>
+        <div>
+          <input type='hidden' name='ID' value='' />
+        </div>
+        <br />
+        <div class='buttons'>
+          <input type='submit' value='Create' />
+        </div>
+  </form>
+</div>
+
+<h2>Login Panel</h2>
+<p>
+  As the login panel is for many applications the first thing the user sees,
+  it should be styled well.
+</p>
+<div align="center">
+<div class="NX_login_panel">
+  <form>
+    <div class="NX_title">Login</div>
+    <div class="NX_fields">
+      <table>
+	<tr>
+	  <td><label>Username:</label></td>
+	  <td><input type="text" size="24"/></td>
+	</tr>
+	<tr>
+	  <td><label>Password:</label></td>
+	  <td><input type="password" size="24"/></td>
+	</tr>
+      </table>
+    </div>
+    <div class="NX_buttons"><a class="NX_button" href="#" onclick="document.forms[0].submit();" title="Login">Login</a></div>
+  </form>
+</div>
+</div>
+
+<h2>Footer</h2>
+<p>
+$Id: nx.html,v 1.7 2004/09/21 09:18:56 sven Exp $
+</p>
+</body>
+</html>

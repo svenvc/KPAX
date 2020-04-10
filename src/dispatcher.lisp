@@ -79,7 +79,10 @@
   (with-output-to-string (out)
     (mp:map-process-backtrace mp:*current-process* 
                               #'(lambda (x) (format out "~a~%" x))))
-  #-lispworks
+  #+sbcl
+  (with-output-to-string (out)
+    (sb-debug:print-backtrace :stream out))
+  #-(or lispworks sbcl)
   "no-backtrace")
 
 (defun standard-error-hook (request-response condition backtrace)
